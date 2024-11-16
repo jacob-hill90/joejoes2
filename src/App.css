@@ -1,0 +1,126 @@
+*{
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #f8f9fa;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  padding: 1rem 3rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 80px;
+}
+
+.logo-container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  
+}
+
+.logo {
+  height: 80%;
+  object-fit: contain;
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
+  margin-left: auto;
+  align-items: center;
+}
+
+.nav button {
+  background: none;
+  border: none;
+  color: black;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: color 0.3s, border-bottom 0.3s;
+}
+
+.nav button:hover,
+.nav button.active {
+  border-bottom: 2px solid black;
+  color: #000;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 2.5rem;
+  cursor: pointer;
+  color: black;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: green;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    display: none;
+    gap: 0.5rem;
+    padding: 1rem 0;
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 80vh; 
+  overflow: hidden;
+  background-color: black;
+}
+
+.landing-video {
+  width: 100%;
+  height: 110%;
+  object-fit: cover;
+  opacity: 90%;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 1rem 2rem;
+  border-radius: 10px;
+}
+
+section {
+  margin-top: 2rem;
+  font-size: 1.25rem;
+  text-align: center;
+}
