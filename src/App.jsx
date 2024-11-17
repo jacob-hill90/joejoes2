@@ -90,7 +90,7 @@ function App() {
         {activeTab === "home" && (
           <div className="video-container">
             <video
-              src={`${CLOUDFRONT_URL}/trim.mp4`}
+              src={`${CLOUDFRONT_URL}/output.mp4`}
               type="video/mp4"
               autoPlay
               loop
