@@ -2,20 +2,20 @@ import { useState, useRef, useEffect } from "react";
 import { CLOUDFRONT_URL } from "./config";
 import Gallery from "./components/Gallery";
 import About from "./components/About";
-import Preview from "./components/Preview"
+import Preview from "./components/Preview";
 import "./App.css";
-
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeTab, setActiveTab] = useState("home");
   const navRef = useRef(null);
 
-  
   const renderContent = () => {
     switch (activeTab) {
       case "home":
-        return <div className="tab-content">Check back soon for 2025 details!</div>;
+        return (
+          <div className="tab-content">Check back soon for 2025 details!</div>
+        );
       case "about":
         return <About />;
       case "preview":
@@ -39,11 +39,21 @@ function App() {
     };
   }, []);
 
+  const reload = () => {
+    location.reload();
+    console.log("hey");
+  };
+
   return (
     <>
       <header className="header">
         <div className="logo-container">
-          <img src="/joejoelogo.png" alt="JoeJoe's Logo" className="logo" />
+          <img
+            src="/joejoelogo.png"
+            onClick={() => window.location.reload()}
+            alt="JoeJoe's Logo"
+            className="logo"
+          />
         </div>
         <nav ref={navRef} className={`nav ${menuOpen ? "open" : ""}`}>
           <button

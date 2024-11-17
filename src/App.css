@@ -1,3 +1,4 @@
+/* General Reset */
 * {
   margin: 0;
   border: 0;
@@ -33,6 +34,7 @@ body {
 .logo {
   height: 80%;
   object-fit: contain;
+  z-index: 1000;
 }
 
 .nav {
@@ -64,11 +66,12 @@ body {
   cursor: pointer;
 }
 
-.tab-content{
+.tab-content {
   text-align: center;
   padding: 5rem;
 }
 
+/* Mobile Navigation */
 @media (max-width: 768px) {
   .nav {
     position: absolute;
@@ -113,6 +116,16 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+@media (max-width: 768px) {
+  .video-container {
+    height: 60vh; /* 60% of the viewport height */
+  }
+
+  .landing-video {
+    height: 100%; /* Ensure it fills the container */
+  }
+}
+
 /* Photos Grid */
 .photos-grid {
   display: grid;
@@ -141,6 +154,27 @@ body {
 
 .photo-wrapper:hover .photo {
   transform: scale(1.1);
+}
+
+/* Mobile Specific Adjustments */
+@media (max-width: 768px) {
+  .photos-grid {
+    display: flex; /* Switch to flexbox */
+    flex-wrap: wrap; /* Allow wrapping */
+    justify-content: center; /* Center photos horizontally */
+    gap: 1rem; /* Maintain spacing between photos */
+    padding: 1rem;
+  }
+
+  .photo-wrapper {
+    width: 90%; /* Make photos responsive and centered */
+    max-width: 400px; /* Optional: Limit max width for smaller screens */
+    margin: 0 auto; /* Center photos vertically if needed */
+  }
+
+  .photo {
+    width: 100%; /* Ensure the photo fits its container */
+  }
 }
 
 /* About Section */
