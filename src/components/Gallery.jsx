@@ -42,8 +42,8 @@ const Gallery = () => {
 
   return (
     <div className="gallery-content">
-      {/* Video Section */}
       <div className="gallery-video-container">
+        <h1 id="videoHeader">Tailgate Highlights: 2024</h1>
         <video
           src={`${CLOUDFRONT_URL}/fullComp.mp4`}
           type="video/mp4"
@@ -51,9 +51,10 @@ const Gallery = () => {
           className="gallery-video"
         />
       </div>
+      <h1 id="videoHeader">Photos: 2024</h1>
 
-      {/* Photos Section */}
       <div className="photos-grid">
+
         {galleryImages.map((filename, index) => (
           <div
             key={index}
